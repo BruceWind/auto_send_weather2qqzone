@@ -1,3 +1,7 @@
+
+## Base on:[https://github.com/ShomyLiu/qqzone](https://github.com/ShomyLiu/qqzone)
+
+
 ## 一个简单的模拟登录qq空间的工具
 >目前该程序使用python实现了模拟登录qq空间，并且实现可以发表说说，还可以获取相册
 

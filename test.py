@@ -44,22 +44,6 @@ def multi(qq):
     s.wait_allfinish()
 
 
-def getAlbum(qq):
-
-    global test_qq
-    test_qq = ''  # 要爬取人的qq号, 不写默认为空。
-    qq.getAlbumList(test_qq)
-    # qq.getAlbumList() 无参数默认爬取自己的相册
-
-    if len(qq.picUrl) < 2:
-        print 'few pictures'
-    else:
-        if test_qq == '':
-            test_qq = qq.qq  # 默认是自己的号码
-        if not os.path.exists(test_qq):
-            os.mkdir(test_qq)
-        multi(qq)
-
 
 def login():
     # method ='2' # raw_input('选择方式登录:1.二维码;2.帐号密码;\n')
@@ -82,5 +66,4 @@ def login():
 if __name__ == '__main__':
 
     qq = login()  # 登录入口
-    # getAlbum(qq)  # 获取相册
     qq.publishMessage("测试 python: "+time.ctime())
