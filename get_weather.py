@@ -5,7 +5,7 @@
 import requests
 import json
 
-url="http://wthrcdn.etouch.cn/weather_mini?citykey=101210101"
+url="http://wthrcdn.etouch.cn/weather_mini?citykey=101021300"
 
 def getHtml():
 	return requests.get(url).text
