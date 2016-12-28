@@ -1,0 +1,16 @@
+# python
+*.py[cod]
+*.so
+dist
+build
+qqzone_ver*
+test_qq.py
+
+# pic
+*.jpg
+*.png
+
+# log
+*.log
+
+# config
