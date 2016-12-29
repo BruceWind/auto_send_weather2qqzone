@@ -12,7 +12,7 @@ import get_weather
 import requests
 import json
 
-url = r'http://wthrcdn.etouch.cn/weather_mini?citykey=101020100'
+url = r'http://wthrcdn.etouch.cn/weather_mini?citykey=101020100' #城市id 上海 
 os.chdir("/home/wei/git/auto_send_weather2qqzone")
 web = webHandler.WebHandler()
 cf=confReader.ConfReader()

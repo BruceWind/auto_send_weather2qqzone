@@ -13,8 +13,8 @@ cd ../
 ##
 echo "请先修改 info.conf 设置qq 和 密码"
 
-sudo ln -s /home/wei/git/auto_send_weather2qqzone/test.py /usr/bin/sendweather2qqzone
-chmod +x test.py
+sudo ln -s /home/wei/git/auto_send_weather2qqzone/send_shuo.py /usr/bin/sendweather2qqzone
+chmod +x send_shuo.py
 
 sendweather2qqzone
 
