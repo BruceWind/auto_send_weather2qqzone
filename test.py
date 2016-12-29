@@ -8,6 +8,13 @@ import ConfigParser
 import os
 import random
 import time
+import get_weather
+import requests
+import json
+
+
+url = r'http://wthrcdn.etouch.cn/weather_mini?citykey=101020100'
+
 
 
 web = webHandler.WebHandler()
@@ -16,13 +23,29 @@ cf = ConfigParser.ConfigParser()
 cf.read('info.conf')
 
 
+def getWeatherStrUtf8():
+    jsonStr = requests.get(url).text
+    data = eval(json.dumps(jsonStr,ensure_ascii=False))
+    exec("Data="+data)
+    info = Data["data"]
+    weather = info["forecast"]
+    forecast = info['forecast']
+
+    today = forecast[0]
+    str_today=info['city']+"\n"+today["type"]+"\t\t"+today["fengxiang"] + "\n" + today["high"] + "\t" + today["low"]+"\n"+info["ganmao"]
+    return str_today
+
 def parse():
     '''
     从info.conf中读取配置信息
     '''
     qq = cf.get('info', 'qq')
     pwd = cf.get('info', 'pwd')
+    footer = cf.get('info', 'footer')
     return qq, pwd
+
+def getFooter():
+    return cf.get('info', 'footer')
 
 
 def func(hostqq, url, tp):
@@ -66,4 +89,4 @@ def login():
 if __name__ == '__main__':
 
     qq = login()  # 登录入口
-    qq.publishMessage("测试 python: "+time.ctime())
+    qq.publishMessage(getWeatherStrUtf8()+"\n"+getFooter()) # +"\n"+time.ctime()

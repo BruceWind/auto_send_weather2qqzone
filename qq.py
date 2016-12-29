@@ -10,6 +10,7 @@ import os
 import sys
 import json
 import myLog
+import get_weather
 from webHandler import WebHandler as Web
 
 
