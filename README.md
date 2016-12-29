@@ -13,8 +13,8 @@
 完成之后，每小时发一条说说到qq空间，但是如果两条内容相同，会干掉之前的那条，发出新的这条,没有刷屏的垃圾信息。 不要设置的过于频繁，过于频繁 会导致 qq空间拒绝。
 
 
-## arm或者 树莓派使用
+## arm机器 或者 树莓派使用
 
 setup.sh文件中有个`wget xxxlinux-x86_x64.zip` 的过程无法再用，arm平台需要手动编译pyv8。
 
-[https://buffer.github.io/thug/doc/build.html](https://buffer.github.io/thug/doc/build.html)
+编译教程如下：[https://buffer.github.io/thug/doc/build.html](https://buffer.github.io/thug/doc/build.html)
