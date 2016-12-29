@@ -4,7 +4,7 @@
 from scrapyHandler import ScrapyHandler
 from qq import QQ
 import webHandler
-import ConfigParser
+import confReader
 import os
 import random
 import time
@@ -12,16 +12,10 @@ import get_weather
 import requests
 import json
 
-
 url = r'http://wthrcdn.etouch.cn/weather_mini?citykey=101020100'
-
-
-
+os.chdir("/home/wei/git/auto_send_weather2qqzone")
 web = webHandler.WebHandler()
-
-cf = ConfigParser.ConfigParser()
-cf.read('info.conf')
-
+cf=confReader.ConfReader()
 
 def getWeatherStrUtf8():
     jsonStr = requests.get(url).text
@@ -35,17 +29,8 @@ def getWeatherStrUtf8():
     str_today=info['city']+"\n"+today["type"]+"\t\t"+today["fengxiang"] + "\n" + today["high"] + "\t" + today["low"]+"\n"+info["ganmao"]
     return str_today
 
-def parse():
-    '''
-    从info.conf中读取配置信息
-    '''
-    qq = cf.get('info', 'qq')
-    pwd = cf.get('info', 'pwd')
-    footer = cf.get('info', 'footer')
-    return qq, pwd
-
 def getFooter():
-    return cf.get('info', 'footer')
+    return cf.getFooter()
 
 
 def func(hostqq, url, tp):
@@ -69,24 +54,16 @@ def multi(qq):
 
 
 def login():
-    # method ='2' # raw_input('选择方式登录:1.二维码;2.帐号密码;\n')
-    # if method == '1':
-    #     qq = QQ(method='1')
-    #     qq.login()
-    # elif method == '2':  # 从配置文件读取信息
-    #     qqNum, pwd = parse()
-    #     #  qqNum = raw_input('输入QQ号:')
-    #     #  qqPwd = raw_input('输入密码:')
-    #     qq = QQ(qqNum, pwd)
-    #     qq.login()
-    # else:
-    #     print '请输入1,或者2'
-    qqNum, pwd = parse()
+    qqNum = cf.getQQ()
+    pwd = cf.getPwd()
+
     qq = QQ(qqNum, pwd)
     qq.login()
     return qq
 
 if __name__ == '__main__':
 
+
+    time.sleep(1)
     qq = login()  # 登录入口
     qq.publishMessage(getWeatherStrUtf8()+"\n"+getFooter()) # +"\n"+time.ctime()
