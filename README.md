@@ -22,3 +22,9 @@ setup.sh文件中有个`wget xxxlinux-x86_x64.zip` 的过程无法再用，arm�
 树莓派下编译，需要增大swap空间，增大虚拟内存，不然内存会不够，如果不先修改swap空间，然后看着板子温度跑到85度花了20分钟时间,结果报错，然后你又要重新编译，就哭吧！
 
 编译教程如下：[https://buffer.github.io/thug/doc/build.html](https://buffer.github.io/thug/doc/build.html)
+
+
+## 更多玩法
+这个这个仓库，没有什么真实的中心功能，中心不是取天气，也不是发说说，核心功能就是这个玩法。
+
+玩家可以自由替换，比如把天气发到qq空间，改为发送到短信，找第三方短信平台，可以自由玩。
