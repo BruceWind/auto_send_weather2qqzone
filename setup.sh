@@ -1,13 +1,27 @@
 sudo apt-get install scons
 sudo apt-get install libboost-dev libboost-thread-dev
 sudo apt-get install libboost-system-dev libboost-python-dev
+# PyV8 install
 mkdir  PyV8download
 cd PyV8download
 wget https://github.com/emmetio/pyv8-binaries/raw/master/pyv8-linux64.zip
-
 unzip pyv8-linux64.zip
 sudo cp * /usr/lib/python2.7/dist-packages/
 cd ../
 ## done
 
-python test.py
+##
+echo "请先修改 info.conf 设置qq 和 密码"
+
+sudo ln -s /home/wei/git/auto_send_weather2qqzone/test.py /usr/bin/sendweather2qqzone
+chmod +x test.py
+
+sendweather2qqzone
+
+#write out current crontab
+crontab -l > mycron
+#echo new cron into cron file
+echo "* */1 * * * sendweather2qqzone" >> mycron
+#install new cron file
+crontab mycron
+rm mycron
