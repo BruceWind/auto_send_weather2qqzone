@@ -15,6 +15,8 @@
 
 ## arm机器 或者 树莓派使用
 
+![](https://github.com/weizongwei5/my_blog_datasave/raw/eea7eb1b0698b380975a804cf2b812ae409b72a7/img/no_display_install_rpi.png)
+
 setup.sh文件中有个`wget xxxlinux-x86_x64.zip` 的过程无法再用，arm平台需要手动编译pyv8。
 
 树莓派下编译，需要增大swap空间，增大虚拟内存，不然内存会不够，如果不先修改swap空间，然后看着板子温度跑到85度花了20分钟时间,结果报错，然后你又要重新编译，就哭吧！
