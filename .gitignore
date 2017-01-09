@@ -13,4 +13,4 @@ test_qq.py
 # log
 *.log
 
-*.config
+info.conf
