@@ -14,3 +14,5 @@ test_qq.py
 *.log
 
 info.conf
+
+info_copy.conf
