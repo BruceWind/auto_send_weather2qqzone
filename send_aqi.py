@@ -4,21 +4,21 @@
 from scrapyHandler import ScrapyHandler
 from qq import QQ
 import webHandler
-import confReader
+import ConfReader
 import os
 import random
 import time
-import get_aqi_for_city
+import AQIGetter
 import requests
 import json
 import getpass
 
 os.chdir("/home/"+getpass.getuser()+"/git/auto_send_weather2qqzone")
 web = webHandler.WebHandler()
-cf=confReader.ConfReader()
+cf=ConfReader.ConfReader()
 
 def getAQIStr():
-    str=get_aqi_for_city.AQIGetter().getAQIStr('shanghai')+"\n"+get_aqi_for_city.AQIGetter().getAQIStr('nanjing')+"\n"+get_aqi_for_city.AQIGetter().getAQIStr('bozhou')
+    str=AQIGetter.AQIGetter().getAQIStr('shanghai')+"\n"+AQIGetter.AQIGetter().getAQIStr('nanjing')+"\n"+AQIGetter.AQIGetter().getAQIStr('bozhou')
     return str.encode('utf-8')
 
 
@@ -60,6 +60,6 @@ if __name__ == '__main__':
 
 
     time.sleep(1)
-    # print(getAQIStr()+"\n"+getFooter())
+    print(getAQIStr()+"\n"+getFooter())
     qq = login()  # 登录入口
-    qq.publishMessage(getAQIStr()+"\n"+getFooter()) # +"\n"+time.ctime()
+    # qq.publishMessage(getAQIStr()+"\n"+getFooter()) # +"\n"+time.ctime()

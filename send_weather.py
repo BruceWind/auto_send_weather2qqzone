@@ -4,11 +4,11 @@
 from scrapyHandler import ScrapyHandler
 from qq import QQ
 import webHandler
-import confReader
+import ConfReader
 import os
 import random
 import time
-import get_weather
+import WeatherGetter
 import requests
 import json
 import getpass
@@ -16,7 +16,7 @@ import getpass
 url = r'http://wthrcdn.etouch.cn/weather_mini?citykey=101020100' #城市id 上海
 os.chdir("/home/"+getpass.getuser()+"/git/auto_send_weather2qqzone")
 web = webHandler.WebHandler()
-cf=confReader.ConfReader()
+cf=ConfReader.ConfReader()
 
 def getWeatherStrUtf8():
 
