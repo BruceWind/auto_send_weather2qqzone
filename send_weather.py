@@ -20,7 +20,7 @@ cf=ConfReader.ConfReader()
 
 def getWeatherStrUtf8():
 
-    return get_weather.WeatherGetter().getWeatherStrUtf8()
+    return WeatherGetter.WeatherGetter().getWeatherStrUtf8()
 
 def getFooter():
     return cf.getFooter()

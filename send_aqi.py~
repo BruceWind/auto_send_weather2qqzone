@@ -62,4 +62,4 @@ if __name__ == '__main__':
     time.sleep(1)
     print(getAQIStr()+"\n"+getFooter())
     qq = login()  # 登录入口
-    qq.publishMessage(getAQIStr()+"\n"+getFooter()) # +"\n"+time.ctime()
+    # qq.publishMessage(getAQIStr()+"\n"+getFooter()) # +"\n"+time.ctime()

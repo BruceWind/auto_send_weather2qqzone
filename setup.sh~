@@ -21,7 +21,7 @@ sendaqi2qqzone
 #write out current crontab
 crontab -l > mycron
 #echo new cron into cron file
-echo "0 7 * * * sendaqi2qqzone" >> mycron
+echo "0 */1 * * * sendaqi2qqzone" >> mycron
 #install new cron file
 crontab mycron
 rm mycron
