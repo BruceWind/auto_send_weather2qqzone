@@ -12,7 +12,8 @@ test_qq.py
 
 # log
 *.log
-
+*.py~
+*.sh~
 info.conf
 
 info_copy.conf

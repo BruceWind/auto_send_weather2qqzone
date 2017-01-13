@@ -19,7 +19,7 @@ cf=ConfReader.ConfReader()
 
 def getAQIStr():
     str=AQIGetter.AQIGetter().getAQIStr('shanghai')+"\n"+AQIGetter.AQIGetter().getAQIStr('nanjing')+"\n"+AQIGetter.AQIGetter().getAQIStr('bozhou')
-    return str.encode('utf-8')
+    return str
 
 
 def getFooter():
