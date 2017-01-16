@@ -21,8 +21,8 @@ class AQIGetter(object):
         quality = Data['quality']
 
     # str = area+"\tAQI:"+aqi+" \t 各监测点平均PM2.5:"+pm2_5_24h +"\t "+quality
-        return area+"\tAQI:"+aqi+" \t 各监测点平均PM2.5:"+pm2_5_24h +"\t "+quality
+        return area+"\tAQI:"+aqi+"\t PM2.5平均值:"+pm2_5_24h +"\t 空气质量 "+quality
 
 
 
-print  AQIGetter().getAQIStr('shanghai')
+# print  AQIGetter().getAQIStr('shanghai')
